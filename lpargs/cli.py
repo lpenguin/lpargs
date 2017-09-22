@@ -15,12 +15,11 @@ def main():
                                             "* d: dirname")
     p.add_argument('--delimiter', '-d', default='\t')
     p.add_argument('--brackets', '-b', default='{}')
-    p.add_argument('template', nargs=argparse.REMAINDER,
-                   )
+    p.add_argument('template', nargs=argparse.REMAINDER)
     args = p.parse_args()
 
     template = ' '.join(
-        quote(arg)
+        quote(arg).replace('\-', '-')
         for arg in args.template
     )
 
