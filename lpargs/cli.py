@@ -15,7 +15,7 @@ def main():
                                             "* d: dirname")
     p.add_argument('--delimiter', '-d', default='\t')
     p.add_argument('--brackets', '-b', default='{}')
-    p.add_argument('template', nargs="+",
+    p.add_argument('template', nargs=argparse.REMAINDER,
                    )
     args = p.parse_args()
 
